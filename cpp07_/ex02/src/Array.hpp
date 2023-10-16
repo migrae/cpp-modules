@@ -6,7 +6,7 @@
 /*   By: mgraefen <mgraefen@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 16:00:00 by mgraefen          #+#    #+#             */
-/*   Updated: 2023/07/12 10:52:08 by mgraefen         ###   ########.fr       */
+/*   Updated: 2023/10/16 08:55:41 by mgraefen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Array {
 	T& operator[](size_t index);
 	~Array();
 
-	size_t size(void);
+	size_t size(void) const;
 
 	class IndexOutOfBounds : public std::exception{
 		public:
@@ -56,7 +56,7 @@ Array<T>::Array(const Array &rhs) : _Array(new T[rhs._size]), _size(rhs._size) {
 template <class T>
 Array<T> &Array<T>::operator=(const Array &rhs) {
   if (this != &rhs) {
-    delete _Array;
+    delete [] _Array;
     _size = rhs._size;
   }
   if (_size > 0) {
@@ -69,7 +69,7 @@ Array<T> &Array<T>::operator=(const Array &rhs) {
 
 template <class T>
 T& Array<T>::operator[](size_t index){
-	if(index > _size)
+	if(index >= _size)
 		throw Array::IndexOutOfBounds();
 	else
 		return _Array[index];
@@ -87,6 +87,6 @@ Array<T>::~Array() {
 }
 
 template <class T>
-size_t Array<T>::size(void) {
+size_t Array<T>::size(void) const {
   return _size;
 }
