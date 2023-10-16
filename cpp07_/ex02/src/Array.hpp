@@ -6,9 +6,13 @@
 /*   By: mgraefen <mgraefen@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 16:00:00 by mgraefen          #+#    #+#             */
-/*   Updated: 2023/10/16 08:55:41 by mgraefen         ###   ########.fr       */
+/*   Updated: 2023/10/16 09:09:19 by mgraefen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
+#ifndef ARRAY_HPP
+#define ARRAY_HPP
 
 #include <string>
 #include <iostream>
@@ -90,3 +94,5 @@ template <class T>
 size_t Array<T>::size(void) const {
   return _size;
 }
+
+#endif
