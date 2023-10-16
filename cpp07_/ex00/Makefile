@@ -6,14 +6,14 @@
 #    By: mgraefen <mgraefen@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/05 13:09:59 by mgraefen          #+#    #+#              #
-#    Updated: 2023/07/11 15:30:50 by mgraefen         ###   ########.fr        #
+#    Updated: 2023/10/16 08:35:09 by mgraefen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	Whatever
 
 SRCS_DIR	=	src/
-SRC_FILES	=	main whatever
+SRC_FILES	=	main
 OBJS_DIR	=	obj/
 COMP			=	c++
 CXXFLAGS		=	-g -Wall -Werror -Wextra -std=c++98 -Wconversion
