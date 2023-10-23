@@ -6,7 +6,7 @@
 /*   By: mgraefen <mgraefen@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 09:44:44 by mgraefen          #+#    #+#             */
-/*   Updated: 2023/07/13 14:09:15 by mgraefen         ###   ########.fr       */
+/*   Updated: 2023/10/23 09:14:40 by mgraefen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,13 @@ int main(void){
 	Test4.longestSpan();
 	Test4.shortestSpan();
 	std::cout << std::endl;
+
+	Span Test5(10);
+	Test5.add_a_bunch_of_numbers(11, 10);
+
+	Span Test6(10);
+	Test6.longestSpan();
+	Test6.shortestSpan();
+	
 	return 0;
 }

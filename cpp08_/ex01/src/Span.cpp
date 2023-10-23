@@ -6,7 +6,7 @@
 /*   By: mgraefen <mgraefen@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 08:35:40 by mgraefen          #+#    #+#             */
-/*   Updated: 2023/07/13 14:08:28 by mgraefen         ###   ########.fr       */
+/*   Updated: 2023/10/23 09:15:13 by mgraefen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void Span::addNumber(const int number) {
   try {
     if (_numbers->size() < _max_size) {
       _numbers->push_back(number);
-      // std::cout << "added: " << number << std::endl;
     } else
       throw overSize();
   } catch (std::exception &e) {
@@ -52,7 +51,7 @@ int Span::shortestSpan(void) {
     std::cout << "The shortest span is 0, because there is only one number "
                  "value present: "
               << *_numbers->begin() << std::endl;
-    return 1;
+    return 0;
   } else if (_numbers->size() > 0) {
     std::sort(_numbers->begin(), _numbers->end());
     std::vector<int> spans(_numbers->size());
@@ -89,7 +88,6 @@ int Span::longestSpan(void) {
 }
 
 void Span::add_a_bunch_of_numbers(const unsigned int n, unsigned int max_num) {
-  //std::srand(static_cast<unsigned int>(std::time(NULL)));
   for (unsigned int i = 0; i < n; i++) {
     addNumber(::rand() % max_num);
   }
