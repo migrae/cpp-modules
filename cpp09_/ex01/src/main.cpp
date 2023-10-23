@@ -6,7 +6,7 @@
 /*   By: mgraefen <mgraefen@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 09:58:35 by mgraefen          #+#    #+#             */
-/*   Updated: 2023/07/18 13:20:17 by mgraefen         ###   ########.fr       */
+/*   Updated: 2023/10/23 11:29:34 by mgraefen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main (int argc, char **argv){
 			}
 		}
 		catch(std::exception &e){
-			std::cout << e.what() << std::endl;
+			std::cout << e.what() << "hhhh" << std::endl;
 		}
 	}
 	else{
