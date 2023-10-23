@@ -6,7 +6,7 @@
 /*   By: mgraefen <mgraefen@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 13:43:13 by mgraefen          #+#    #+#             */
-/*   Updated: 2023/07/13 08:14:28 by mgraefen         ###   ########.fr       */
+/*   Updated: 2023/10/23 09:06:39 by mgraefen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ const char *notFound::what() const throw() {
   return ("Whatever you are searching, it is not in this container.");
 }
 
-template <typename Container, typename T>
-int easyfind(Container container, T toFind)
+template <typename Container>
+int easyfind(Container container, int toFind)
 {
 	typename Container::iterator it;
 	
