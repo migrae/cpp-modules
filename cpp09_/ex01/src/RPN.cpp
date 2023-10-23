@@ -6,13 +6,22 @@
 /*   By: mgraefen <mgraefen@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 09:43:59 by mgraefen          #+#    #+#             */
-/*   Updated: 2023/10/23 13:22:21 by mgraefen         ###   ########.fr       */
+/*   Updated: 2023/10/23 13:39:32 by mgraefen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
 
-bool RPN::isInteger(const std::string& str) {
+std::string RPN::trim(std::string& str) {
+    size_t first = str.find_first_not_of(' ');
+    if (first == std::string::npos)
+        return "";
+    size_t last = str.find_last_not_of(' ');
+    return str.substr(first, (last - first + 1));
+}
+
+bool RPN::isInteger(std::string& str) {
+		str = trim(str);
     std::istringstream iss(str);
     int num;
     iss >> num;
@@ -26,9 +35,11 @@ bool RPN::solve(std::string str) {
 	}
   if (str.find_first_not_of("-+*/0123456789 ") != std::string::npos ||
       str.find_first_of("-+*/") == std::string::npos) {
+		std::cout << "Error" << std::endl;
     return false;
   }
   if (!evaluate_string(str)){
+		std::cout << "Error" << std::endl;
 		return false;
 	} 
   return true;
@@ -80,6 +91,7 @@ int RPN::calculate(char op) {
       if (operand_2 == 0) {
         throw DivisionByZero();
       }
+			res = operand_1 / operand_2;
       break;
     default:
       std::cout << "unknown operator" << std::endl;
