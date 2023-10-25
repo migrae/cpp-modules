@@ -6,7 +6,7 @@
 /*   By: mgraefen <mgraefen@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 16:34:22 by mgraefen          #+#    #+#             */
-/*   Updated: 2023/07/26 14:47:34 by mgraefen         ###   ########.fr       */
+/*   Updated: 2023/10/25 09:09:46 by mgraefen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void Deque_container::sort(int argc, char **argv) {
   jt_loop();
   double end_time = std::clock();
   elapsed_time = static_cast<double>(end_time - start_time) / CLOCKS_PER_SEC;
-  // is_sorted();
+  is_sorted();
 }
 
 void Deque_container::print_elapsed_time() {
@@ -218,13 +218,15 @@ Deque_container::Deque_container() { return; }
 
 Deque_container::~Deque_container() { return; }
 
-Deque_container::Deque_container(const Deque_container &rhs) {
-  (void)rhs;
-  return;
-}
+Deque_container::Deque_container(const Deque_container &rhs) { *this = rhs; }
 
 Deque_container &Deque_container::operator=(const Deque_container &rhs) {
-  (void)rhs;
+  this->_pairs = rhs._pairs;
+  this->_final_numbers = rhs._final_numbers;
+  this->_str_loader = rhs._str_loader;
+  this->_jt_idx = rhs._jt_idx;
+  this->struggler = rhs.struggler;
+  this->elapsed_time = rhs.elapsed_time;
   return *this;
   //////////////////////////////////////////////////////
 }

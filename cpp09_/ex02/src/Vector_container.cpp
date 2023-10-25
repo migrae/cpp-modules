@@ -6,7 +6,7 @@
 /*   By: mgraefen <mgraefen@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 16:51:29 by mgraefen          #+#    #+#             */
-/*   Updated: 2023/07/26 14:47:27 by mgraefen         ###   ########.fr       */
+/*   Updated: 2023/10/25 09:07:35 by mgraefen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void Vector_container::sort(int argc, char **argv) {
   jt_loop();
   double end_time = std::clock();
   elapsed_time = static_cast<double>(end_time - start_time) / CLOCKS_PER_SEC;
-  // is_sorted();
+  is_sorted();
 }
 
 void Vector_container::print_elapsed_time() {
@@ -218,12 +218,17 @@ Vector_container::Vector_container() { return; }
 Vector_container::~Vector_container() { return; }
 
 Vector_container::Vector_container(const Vector_container &rhs) {
-  (void)rhs;
+  *this = rhs;
   return;
 }
 
 Vector_container &Vector_container::operator=(const Vector_container &rhs) {
-  (void)rhs;
+  this->_pairs = rhs._pairs;
+  this->_final_numbers = rhs._final_numbers;
+  this->_str_loader = rhs._str_loader;
+  this->_jt_idx = rhs._jt_idx;
+  this->struggler = rhs.struggler;
+  this->elapsed_time = rhs.elapsed_time;
   return *this;
   //////////////////////////////////////////////////////
 }
